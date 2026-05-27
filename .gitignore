@@ -1,0 +1,69 @@
+# ==========================================
+# UrsoPhi - gitignore
+# ==========================================
+
+# --- Dependencias de Node ---
+node_modules/
+jspm_packages/
+web_modules/
+
+# --- Construcción y Salida (Next.js / Frontend) ---
+.next/
+out/
+build/
+dist/
+.cache/
+.parcel-cache/
+.turbo/
+
+# --- Variables de Entorno y Secretos ---
+# (Crítico: Regla constitucional de UrsoPhi - No exponer secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# --- Firebase ---
+.firebase/
+*-debug.log*
+firebase-debug-*.log
+firestore-debug-*.log
+ui-debug-*.log
+
+# --- Herramientas de Desarrollo y Editores ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.fleet/
+.helix/
+
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+Icon\r
+
+# --- Pruebas y Cobertura ---
+coverage/
+.nyc_output/
+.cypress/
+
+# --- Otros (Logs y Temporales) ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
