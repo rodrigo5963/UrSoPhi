@@ -27,8 +27,8 @@ const imageModel = getGenerativeModel(ai, {
   }
 });
 
-// Bind functions to window so they are accessible from onclick inline handlers
-window.generateText = async function() {
+// Bind functions to window so they are accessible from onclick inline handlers (prueba de git)
+window.generateText = async function () {
   const promptInput = document.getElementById("text-prompt");
   const outputDiv = document.getElementById("text-output");
   const statusBadge = document.getElementById("text-status-badge");
@@ -50,12 +50,12 @@ window.generateText = async function() {
   try {
     // Generate streaming content for better premium feel
     const result = await textModel.generateContentStream(prompt);
-    
+
     for await (const chunk of result.stream) {
       const chunkText = chunk.text();
       outputDiv.innerHTML += chunkText;
     }
-    
+
     statusBadge.textContent = "Completado";
   } catch (error) {
     console.error("Error generating text:", error);
@@ -67,7 +67,7 @@ window.generateText = async function() {
   }
 };
 
-window.generateImage = async function() {
+window.generateImage = async function () {
   const promptInput = document.getElementById("image-prompt");
   const placeholder = document.getElementById("image-placeholder");
   const resultImg = document.getElementById("result-img");
@@ -86,7 +86,7 @@ window.generateImage = async function() {
   btn.disabled = true;
   statusBadge.textContent = "Diseñando...";
   outputPanel.classList.add("loading");
-  
+
   // Reset image displays
   resultImg.classList.remove("loaded");
   resultImg.style.display = "none";
@@ -96,7 +96,7 @@ window.generateImage = async function() {
   try {
     const result = await imageModel.generateContent(prompt);
     const response = result.response;
-    
+
     let imageGenerated = false;
 
     if (response.candidates?.[0].content?.parts) {
@@ -104,10 +104,10 @@ window.generateImage = async function() {
         if (part.inlineData) {
           const mimeType = part.inlineData.mimeType;
           const base64Data = part.inlineData.data;
-          
+
           resultImg.src = `data:${mimeType};base64,${base64Data}`;
           resultImg.style.display = "block";
-          
+
           // Smooth fade in
           setTimeout(() => {
             resultImg.classList.add("loaded");
