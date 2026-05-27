@@ -15,7 +15,7 @@ const firebaseConfig = {
 // Initialize Firebase App
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase AI with Google AI Developer backend
+// Initialize Firebase AI with Google AI Developer backend (microtest git)
 const ai = getAI(app, { backend: new GoogleAIBackend() });
 
 // Create model configurations using gemini-2.5-flash
