@@ -1,2 +1,2 @@
 
-pruebas de configuración git
+pruebas de configuración git en Antigravity
